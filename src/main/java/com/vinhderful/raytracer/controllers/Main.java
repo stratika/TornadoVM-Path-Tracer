@@ -359,7 +359,7 @@ public class Main {
         for (int i = 0; i < numBackends; i++) {
 
             TornadoBackend driver = runtimeCI.getBackend(i);
-            int numDevices = driver.getDeviceCount();
+            int numDevices = driver.getBackendCounter();
 
             // Add Tornado devices, perform initial mapping
             for (int j = 0; j < numDevices; j++) {

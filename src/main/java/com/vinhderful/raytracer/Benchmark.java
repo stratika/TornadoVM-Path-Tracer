@@ -122,7 +122,7 @@ public class Benchmark {
         for (int i = 0; i < numBackends; i++) {
 
             TornadoBackend driver = runtimeCI.getBackend(i);
-            int numDevices = driver.getDeviceCount();
+            int numDevices = driver.getBackendCounter();
 
             // Exclude PTX due to unsupported intrinsic (atan2)
             if (driver.getName().toLowerCase().contains("ptx")) {
