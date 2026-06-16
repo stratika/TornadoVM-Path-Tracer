@@ -124,11 +124,6 @@ public class Benchmark {
             TornadoBackend driver = tornadoRuntime.getBackend(i);
             int numDevices = driver.getNumDevices();
 
-            // Exclude PTX due to unsupported intrinsic (atan2)
-            if (driver.getName().toLowerCase().contains("ptx")) {
-                continue;
-            }
-
             for (int j = 0; j < numDevices; j++) {
                 TornadoDevice device = driver.getDevice(j);
                 devices.add(device);
